@@ -49,4 +49,4 @@ DISCORD_TOKEN = '填入TOKEN'
 * `config.js` 可設定機器人前綴與其活動狀態、權限設定
 * 下載之後請運行 `npm install` ，安裝所需要的套件
 * 若要運行， `node .`
-* 若要部屬在repl.it，請[點擊我](https://replit.com/@PikachuTW/Discordjs-v13-Command-Handler) 並Fork專案，並在Secret填入 `DISCORD_TOKEN`
+* 若要部屬在repl.it，請[點擊我](https://replit.com/@PikachuTW/Discordjs-v13-Command-Handler)並Fork專案，並在Secret填入 `DISCORD_TOKEN`
