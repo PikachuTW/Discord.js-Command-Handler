@@ -1,7 +1,7 @@
 {
   "name": "discord.js-v13-command-handler",
   "version": "1.0.0",
-  "description": "",
+  "description": "這是 Discord.js v13 機器人的框架模板，你可以用它來開始搭建機器人",
   "main": "index.js",
   "scripts": {
     "start": "node ."
@@ -10,8 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.10.0",
-    "eslint-plugin-react": "^7.29.3"
+    "eslint": "^8.10.0"
   },
   "dependencies": {
     "discord.js": "^13.6.0",
