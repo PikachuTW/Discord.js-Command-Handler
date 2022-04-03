@@ -26,7 +26,7 @@ module.exports = {
                     return false;
                 }
             },
-        },*/
+        }, */
 
         {
             level: 10,
