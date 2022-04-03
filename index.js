@@ -55,7 +55,5 @@ client.fn = functions;
         }
     });
 
-    client.on('threadCreate', (thread) => thread.join());
-
     client.login(process.env.DISCORD_TOKEN);
 })();
