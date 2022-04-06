@@ -3,7 +3,7 @@ module.exports = {
     settings: {
         prefix: '!',
         // 機器人的前綴
-        activity: 'Tails機器人框架',
+        activity: '',
         // 機器人的活動狀態
     },
 
@@ -26,12 +26,12 @@ module.exports = {
                     return false;
                 }
             },
-        },*/
+        }, */
 
         {
             level: 10,
             name: 'Owner',
-            check: (member) => member.id === '',
+            check: (member) => member.id === '650604337000742934',
             // 填入你的id
         },
     ],

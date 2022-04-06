@@ -5,7 +5,8 @@ const { readdirSync } = require('fs');
 const { permLevels } = require('./config.js');
 const logger = require('./modules/logger.js');
 const functions = require('./modules/functions.js');
-const client = new Client({ intents: 32767, partials: ['CHANNEL', 'USER', 'GUILD_MEMBER', 'MESSAGE', 'REACTION'] });
+
+const client = new Client({ intents: 131071, partials: ['CHANNEL', 'USER', 'GUILD_MEMBER', 'MESSAGE', 'REACTION'] });
 
 const commands = new Collection();
 const aliases = new Collection();
@@ -21,45 +22,35 @@ client.container = {
     aliases,
     levelCache,
 };
-
 client.fn = functions;
 
-const init = async () => {
-
-    const folders = readdirSync('./commands/').filter(file => !file.endsWith('.js'));
-    for (const folder of folders) {
-        const cmds = readdirSync(`./commands/${folder}/`).filter(file => file.endsWith('.js'));
-        for (const file of cmds) {
+(async () => {
+    readdirSync('./commands/').forEach((folder) => {
+        readdirSync(`./commands/${folder}/`).forEach((file) => {
             try {
                 const code = require(`./commands/${folder}/${file}`);
-                logger.log(`CMD ${code.help.name} 已被載入 ✅`);
-                client.container.commands.set(code.help.name, code);
-                code.conf.aliases.forEach(alias => {
-                    client.container.aliases.set(alias, code.help.name);
+                const cmdName = file.split('.')[0];
+                code.conf.name = cmdName;
+                logger.log(`CMD ${cmdName} 已被載入 ✅`);
+                client.container.commands.set(cmdName, code);
+                code.conf.aliases.forEach((alias) => {
+                    client.container.aliases.set(alias, cmdName);
                 });
-            }
-            catch (error) {
+            } catch (error) {
                 logger.error(`${error}`);
             }
-        }
-    }
+        });
+    });
 
-    const eventFiles = readdirSync('./events/').filter(file => file.endsWith('.js'));
-    for (const file of eventFiles) {
+    readdirSync('./events/').forEach((file) => {
         try {
             const eventName = file.split('.')[0];
             logger.log(`EVENT ${eventName} 已被載入 ✅`);
-            const event = require(`./events/${file}`);
-            client.on(eventName, event.bind(null, client));
-        }
-        catch (error) {
+            client.on(eventName, require(`./events/${file}`).bind(null, client));
+        } catch (error) {
             logger.error(`${error}`);
         }
-    }
-
-    client.on('threadCreate', (thread) => thread.join());
+    });
 
     client.login(process.env.DISCORD_TOKEN);
-};
-
-init();
+})();
