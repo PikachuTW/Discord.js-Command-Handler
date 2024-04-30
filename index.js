@@ -4,7 +4,6 @@ const { Client, Collection } = require('discord.js');
 const { readdirSync } = require('fs');
 const { permLevels } = require('./config.js');
 const logger = require('./modules/logger.js');
-const functions = require('./modules/functions.js');
 
 const client = new Client({ intents: 131071, partials: ['CHANNEL', 'USER', 'GUILD_MEMBER', 'MESSAGE', 'REACTION'] });
 
@@ -22,7 +21,6 @@ client.container = {
     aliases,
     levelCache,
 };
-client.fn = functions;
 
 (async () => {
     readdirSync('./commands/').forEach((folder) => {
