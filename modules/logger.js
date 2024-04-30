@@ -1,27 +1,17 @@
 const moment = require('moment-timezone');
 
+const types = ['log', 'warn', 'error', 'cmd', 'ready', 'eval'];
+
 exports.run = (content, type) => {
     const timestamp = `[${moment().tz('Asia/Taipei').format('YYYY-MM-DD HH:mm:ss')}]:`;
 
-    switch (type) {
-    case 'log': return console.log(`${timestamp} LOG ${content} `);
-    case 'warn': return console.log(`${timestamp} WARN ${content} `);
-    case 'error': return console.log(`${timestamp} ERROR ${content} `);
-    case 'cmd': return console.log(`${timestamp} CMD ${content}`);
-    case 'ready': return console.log(`${timestamp} READY ${content}`);
-    case 'eval': return console.log(`${timestamp} EVAL ${content} `);
-    default: throw new TypeError('選項: log, warn, error, cmd, ready, eval');
+    if (!(types.includes(type))) {
+        throw new TypeError('選項: log, warn, error, cmd, ready, eval');
     }
+
+    console.log(`${timestamp} ${type.toUpperCase()} ${content}`);
 };
 
-exports.log = (arg) => this.run(arg, 'log');
-
-exports.warn = (arg) => this.run(arg, 'warn');
-
-exports.error = (arg) => this.run(arg, 'error');
-
-exports.cmd = (arg) => this.run(arg, 'cmd');
-
-exports.ready = (arg) => this.run(arg, 'ready');
-
-exports.eval = (arg) => this.run(arg, 'eval');
+types.forEach((type) => {
+    exports[type] = (arg) => this.run(arg, type);
+});

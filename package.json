@@ -1,7 +1,7 @@
 {
-  "name": "discord.js-v13-command-handler",
+  "name": "discord.js-v14-command-handler",
   "version": "1.0.0",
-  "description": "這是 Discord.js v13 機器人的框架模板，你可以用它來開始搭建機器人",
+  "description": "這是 Discord.js v14 機器人的框架模板，你可以用它來開始搭建機器人",
   "main": "index.js",
   "scripts": {
     "start": "node ."
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@discordjs/builders": "^0.12.0",
-    "discord.js": "^13.6.0",
-    "dotenv": "^16.0.0",
-    "moment-timezone": "^0.5.34"
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "moment-timezone": "^0.5.45"
   }
 }

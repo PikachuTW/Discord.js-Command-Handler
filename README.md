@@ -1,8 +1,8 @@
-# Discord.js v13 Command Handler
+# Discord.js v14 Command Handler
 
-[![Run on Repl.it](https://replit.com/badge/github/Pikachu_TW/Discordjs-v13-Command-Handler)](https://replit.com/github/PikachuTW/Discord.js-v13-Command-Handler)  
+[![Run on Repl.it](https://replit.com/badge/github/Pikachu_TW/Discordjs-v14-Command-Handler)](https://replit.com/github/PikachuTW/Discord.js-v14-Command-Handler)  
 
-這是 Discord.js v13 機器人的框架模板，你可以用它來開始搭建機器人
+這是 Discord.js v14 機器人的框架模板，你可以用它來開始搭建機器人
 
 ## Requirements
 
@@ -49,4 +49,4 @@ DISCORD_TOKEN = '填入TOKEN'
 * `config.js` 可設定機器人前綴與其活動狀態、權限設定
 * 下載之後請運行 `npm install` ，安裝所需要的套件
 * 若要運行， `node .`
-* 若要部屬在repl.it，請[點擊我](https://replit.com/github/PikachuTW/Discord.js-v13-Command-Handler)並Fork專案，並在Secret填入 `DISCORD_TOKEN`
+* 若要部屬在repl.it，請[點擊我](https://replit.com/github/PikachuTW/Discord.js-v14-Command-Handler)並Fork專案，並在Secret填入 `DISCORD_TOKEN`
