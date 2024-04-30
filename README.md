@@ -1,6 +1,6 @@
 # Discord.js v14 Command Handler
 
-[![Run on Repl.it](https://replit.com/badge/github/Pikachu_TW/Discordjs-v14-Command-Handler)](https://replit.com/github/PikachuTW/Discord.js-v14-Command-Handler)  
+[![Run on Repl.it](https://replit.com/badge/github/Pikachu_TW/Discord.js-Command-Handler)](https://replit.com/github/PikachuTW/Discord.js-Command-Handler)  
 
 這是 Discord.js v14 機器人的框架模板，你可以用它來開始搭建機器人
 

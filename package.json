@@ -1,5 +1,5 @@
 {
-  "name": "discord.js-v14-command-handler",
+  "name": "discord.js-command-handler",
   "version": "1.0.0",
   "description": "這是 Discord.js v14 機器人的框架模板，你可以用它來開始搭建機器人",
   "main": "index.js",
