@@ -6,7 +6,7 @@ exports.run = (content, type) => {
     const timestamp = `[${moment().tz('Asia/Taipei').format('YYYY-MM-DD HH:mm:ss')}]:`;
 
     if (!(types.includes(type))) {
-        throw new TypeError('選項: log, warn, error, cmd, ready, eval');
+        throw new TypeError(`選項: ${types.join(', ')}`);
     }
 
     console.log(`${timestamp} ${type.toUpperCase()} ${content}`);
